@@ -26,7 +26,7 @@ export default function SignUp() {
     useEffect(() => {
         const ValidateUser = () => {
             const token = localStorage.getItem('token')
-            if (token) navigate("/")
+            if (token) navigate("/dashboard")
         }
         ValidateUser()
     }, [])

@@ -20,7 +20,7 @@ export default function Login() {
     useEffect(() => {
         const ValidateUser = () => {
             const token = localStorage.getItem('token')
-            if (token) navigate("/")
+            if (token) navigate("/dashboard")
         }
         ValidateUser()
     }, [])
@@ -55,7 +55,7 @@ export default function Login() {
                 setSuccessMessage('🎉 Congratulations! Logged in successfully.');
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('user', JSON.stringify(data.user));
-                setTimeout(() => navigate('/'), 1500);
+                setTimeout(() => navigate('/dashboard'), 1500);
             } else {
                 if (response.status === 404) {
                     setEmailError("User not found");
